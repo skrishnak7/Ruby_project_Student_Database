@@ -1,0 +1,17 @@
+<div class="grid-col-12">
+<div class="grid-row">
+  <div class="grid-col-3 grid-col--center grid-col--no-margin grid-col--no-padding">
+Enter login details:
+<hr>
+<%= form_for(:admin_login, :url => {:action => 'loginmethod'}) do |f| %>
+   <table><tr>
+     <th> Username:</th> <td><%= f.text_field :username %> </td></tr>
+    <tr><th>Password:</th> <td><%= f.password_field :password %> </td></tr>
+     </table>
+        <div class="grid-col-3 grid-col--center grid-col--no-margin grid-col--no-padding">
+            <%= submit_tag('Login') %>
+        </div>
+<% end %>
+</div>
+    </div>
+</div>

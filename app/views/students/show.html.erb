@@ -1,0 +1,61 @@
+<% if !flash[:notice].blank? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+<% end %>
+<
+<div align="right">
+  <%= link_to("LOGOUT!!",{:controller=>'admin_login',:action => 'signup'}) %>
+</div>
+
+<div align="center" class="Users Show">
+  <%= link_to("<<Back to Home Page",{:action => 'index'}) %>
+  <h2>
+    Student Info
+  </h2>
+
+  <table summary="User Detail View">
+
+    <tr>
+      <th>STUDENT ID</th>
+      <td><%= @student.Student_id %></td>
+    </tr>
+
+    <tr>
+      <th>NAME</th>
+      <td><%= @student.first_name%> </t><%= @student.last_name%></td>
+    </tr>
+
+    <tr>
+      <th>EMAIL</th>
+      <td><%= @student.email %></td>
+    </tr>
+
+
+    <tr>
+      <th>PHONE</th>
+      <td><%= @student.phone %></td>
+    </tr>
+
+    <tr>
+      <th>ADDRESS</th>
+      <td><%= @student.address %></td>
+    </tr>
+
+    <tr>
+      <th>Created</th>
+      <td> <%= @student.created_at %></td>
+    </tr>
+
+
+    <tr>
+      <th>Updated</th>
+      <td> <%= @student.updated_at %></td>
+    </tr>
+
+
+
+
+  </table>
+
+</div>

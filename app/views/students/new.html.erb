@@ -1,0 +1,55 @@
+<%= link_to("<<Back to Index",{:action => 'index'}) %>
+
+<% if !flash[:notice].blank? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+<% end %>
+
+<div align="right">
+<%= link_to("LOGOUT!!",{:controller=>'admin_login',:action => 'signup'}) %>
+</div>
+  <div class="User new">
+  <h2>Insert New Student Record</h2>
+
+  <%= form_for(:student, :url => { :action => 'create'}) do |f| %>
+
+      <table summary="User form fields" >
+        <tr>
+          <th>Student ID</th>
+          <td><%= f.text_field(:Student_id)%></td>
+        </tr>
+
+        <tr>
+          <th>FirstName</th>
+          <td><%= f.text_field(:first_name)%></td>
+        </tr>
+
+        <tr>
+          <th>LastName</th>
+          <td><%= f.text_field(:last_name)%></td>
+        </tr>
+
+        <tr>
+          <th>Email</th>
+          <td><%= f.text_field(:email)%></td>
+        </tr>
+
+        <tr>
+          <th>Phone</th>
+          <td><%= f.text_field(:phone)%></td>
+        </tr>
+
+        <tr>
+          <th>Address</th>
+          <td><%= f.text_field(:address)%></td>
+        </tr>
+
+      </table>
+
+      <div class=""form-button>
+        <%= submit_tag("Insert Record")%>
+      </div>
+
+  <% end  %>
+</div>

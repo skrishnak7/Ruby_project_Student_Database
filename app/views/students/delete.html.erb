@@ -1,0 +1,19 @@
+<%= link_to("back to index",{:action => 'index'},:class => 'back-link')%>
+
+<div align="right">
+  <%= link_to("LOGOUT!!",{:controller=>'admin_login',:action => 'signup'}) %>
+</div>
+
+<div class="User delete">
+  <h2>Delete Student record</h2>
+
+  <%= form_for(:student,:url => { :action =>'destroy', :id => @student.id}) do |f| %>
+
+      <p> Are You Sure You Want to delete the User Record?</p>
+
+      <div class="form-button">
+        <%= submit_tag("Delete record")%>
+      </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,39 @@
+<% if !flash[:notice].blank? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+<% end %>
+
+<div align="right">
+  <%= link_to("LOGOUT!!",{:controller=>'admin_login',:action => 'signup'}) %>
+</div>
+
+<div align='center' class="Students Index">
+
+  <h2>Users</h2>
+
+  <%= link_to("Add New Student",{:action => 'new'},:class => 'action new')%>
+
+  <table class="listing" summary="Student List">
+    <tr class="header">
+      <th>StudentID</th>
+
+
+
+    </tr>
+
+    <% @student.each do |user| %>
+        <tr>
+          <td><%= user.Student_id %></td>
+
+
+          <td class="actions">
+            <%= link_to("Show",{:action => 'show',:id => user.id},:class => 'action show') %>
+            <%= link_to("Edit",{:action => 'edit' ,:id => user.id},:class => 'action edit') %>
+            <%= link_to("Delete",{:action => 'delete' ,:id => user.id},:class => 'action delete') %>
+          </td>
+        </tr>
+
+    <% end%>
+  </table>
+</div>
